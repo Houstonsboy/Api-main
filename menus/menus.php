@@ -16,7 +16,7 @@ class menus{
     public function main_right_menu(){
         ?>
         <div class="topnav-right">
-            <a href="">Sign Up</a>
+            <a href="authentication/authindex.php">Sign Up</a>
             <a href="">Sign In</a>
         </div>
         <?php

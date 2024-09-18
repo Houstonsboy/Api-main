@@ -4,7 +4,7 @@
 
 function classAutoLoad($classname){
 
-    $directories = ["contents", "layouts", "menus"];
+    $directories = ["authentication","contents", "layouts", "menus"];
 
     foreach($directories AS $dir){
         $filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $classname . ".php";
@@ -21,11 +21,14 @@ spl_autoload_register('classAutoLoad');
     $ObjMenus = new menus();
     $ObjHeadings = new headings();
     $ObjCont = new contents();
+    $ObjSignup= new  signup();
+    
+
 
 require "includes/constants.php";
 require "includes/dbConnection.php";
 
-$conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
+$conn = new dbConnection('PDO', '127.0.0.1', '3306', 'root', '#Gift@90210!', 'api_d');
 
 
 // print 
